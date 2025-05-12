@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계정 찾기</title>
+    <link rel="stylesheet" href="a.css">
+</head>
+<body>
+    <div class="combined-form-container">
+  <div class="tab-navigation">
+    <button class="tab-button active" data-tab="findIdTab">아이디 찾기</button>
+<button class="tab-button" data-tab="resetPasswordTab">비밀번호 재설정</button>
+  </div>
+  <div id="findIdTab" class="tab-content active">
+    <h2>아이디 찾기</h2>
+    <p class="description-text ">등록하신 이메일을 입력해 주세요</p>
+    <form id="findIdForm" active="/find-id-process" method="post"><div class="input-group">
+       <label for="findIdName">이름</label>
+       <input type="text" id="findIdName" name="name" required placeholder="이름을 입력하세요">
+    </div>
+        <div class="input-group">
+            <label for="findIdEmail">이메일 주소</label>
+            <input type="email" id="findIdEmail" name="email" required placeholder="이메일 주소를 입력하세요">
+        </div>
+        <button type="submit" class="action-button">아이디 찾기</button>
+    </form>
+</div>
+
+<div id="resetPasswordTab" class="tab-content">
+<h2>비밀번호 재설정</h2>
+<P class="description-text">가입시 등록한 아이디와 이메일 주소 입력</P>
+<form id="resetRequestForm" active="/request-password-reset-process" method="post"><div class="input-group">
+<label for="resetId">아이디</label>
+<input type="text" name="resetId" id="userId" required placeholder="아이디를 입력하세요">
+</div>
+<div class="input-group">
+    <label for="resetEmail">이메일 주소</label>
+    <input type="email" id="resetEmail" name="email" required placeholder="이메일을 입력하세요">
+</div>
+    <button type="submit" class="action-button">재설정 메일 발송</button>
+    </form>
+    </div>
+
+    <a href="/login/login.html" class="link-button">로그인 페이지로 돌아가기</a>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            const combinedFormContainer = document.querySelector('.combined-form-container');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // 모든 탭 버튼에서 active 클래스 제거
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    // 모든 탭 콘텐츠 숨기기
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    // 클릭된 탭 버튼에 active 클래스 추가
+                    button.classList.add('active');
+                    // 해당 탭 콘텐츠 보이기
+                    const targetTab = document.getElementById(button.dataset.tab);
+                    if (targetTab) {
+                        targetTab.classList.add('active');
+                    }
+                });
+            });
+
+            // 기본적으로 첫 번째 탭 활성화 (HTML에서 이미 active 클래스가 있지만, JS로도 제어 가능)
+            if (tabButtons.length > 0 && tabContents.length > 0) {
+                if (!document.querySelector('.tab-button.active')) {
+                    tabButtons[0].classList.add('active');
+                    tabContents[0].classList.add('active');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

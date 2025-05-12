@@ -1,0 +1,99 @@
+@font-face {
+    font-family: 'omyu_pretty';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    font-family: 'omyu_pretty', sans-serif;
+    background-color: #fdf6f6;
+    background-image: url(/회원가입/img/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin:0;
+    padding:20px;
+    box-sizing: border-box;
+}
+
+.combined-form-container{
+    background-color: #f6e4e417;
+    padding:40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(118, 84, 84, 0.3);
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 450px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.tab-navigation {
+    display: falex;
+    margin-bottom: 30px;
+    border-bottom: 4px solid #5f5f5f65;
+    text-align: left;
+}
+
+.tab-button{
+    flex-grow:1;
+    padding: 5px 5px;
+    font-family: 'omyu_pretty', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #78636d;
+    background-color: rgba(238, 152, 180, 0.455);
+    border-style:outset;
+    /* border-bottom: 2px solid rgba(82, 99, 150, 0.366); */
+    cursor: pointer;
+    text-align: center;
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+    margin-bottom:-2px;
+}
+
+.tab-button:hover{ 
+    color: rgba(101, 78, 78, 0.452);
+}
+
+.tab-button.active{
+    color: rgba(69, 11, 11, 0.455); /* 활성 탭 색상 */
+    border-bottom-color: #000000; /* 활성 탭 아래 강조선 */
+}
+
+/* --- 탭 콘텐츠 스타일 --- */
+.tab-content{
+    display:none; /* 기본적으로 모든 탭 콘텐츠 숨김 */
+    text-align:center; /* 내부 h2, form 등을 중앙 정렬하려면 필요 */
+    
+}
+
+.tab-content h2 {
+color:#78636d;
+margin-bottom: 20px;
+font-size: 1.8em;
+}
+
+.description-text{
+    font-size: 0.9em;
+    color:#78636d;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+.input-group label{
+    display: block;
+    color:#555;
+    margin-bottom: 8px;
+    font-size: 1em;
+    font-weight: bold;
+
+}
+
+.tab-content.active {
+    display: block; /* active 클래스가 붙은 탭 콘텐츠만 보여줌 */
+}

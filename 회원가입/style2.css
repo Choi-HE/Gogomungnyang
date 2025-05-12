@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'omyu_pretty';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    min-height: 100vh; /*전체 화면 높이*/
+    background-image: url(/회원가입/img/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'omyu_pretty', sans-serif; /*전체적으로 폰트 적용*/
+    display: flex; /*자식 요소(.singup-container)를 중앙 정렬하기 위함*/
+    justify-items: center; /*가로 중앙 정렬*/
+    align-items: center; /*세로 중앙 정렬*/
+    margin: 0; /*기본 마진 제거*/
+    padding: 20px; /*화면 가장자리에 약간의 여백*/
+    box-sizing:border-box;
+}
+
+.signup-container{
+    background-color: #f6e4e417;
+    padding: 20px;
+    border-radius: 3px;
+    box-shadow: 0 3px 10px rgba(217, 155, 155, 0.5);
+   box-sizing: border-box;
+   width:600px;
+    max-width: 650px;
+    margin-left:auto;
+    margin-right:auto;
+    height:950px;
+    text-align: center;
+    font-weight: bold;
+}
+
+form{
+    font-family: 'omyu_pretty';
+    font-size: 16px;
+    font-weight: 900px;
+}
+
+h2{
+    text-align: left;
+    color:rgb(201,118,130);
+    margin-bottom: 16px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.input-group{
+    margin-bottom: 15px;
+    color: #0c0c0c;
+    text-align: left;
+}
+
+.input-group label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"],
+.input-group input[type="email"],
+.input-group input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'omyu_pretty';
+    font-size: 1em;
+}
+
+#name{
+    width:50%;
+    padding: 5px 10px;
+
+}
+
+#postcode{
+    width:50%;
+    padding: 5px 10px;
+}
+
+#email{
+    width:50%;
+    padding: 5px 10px;
+}
+
+#address{
+    width:50%;
+    padding: 5px 10px;
+}
+
+#detailAddress{
+    width:50%;
+    padding: 5px 10px;
+}
+
+#Confirmationpassword{
+    width:50%;
+    padding: 5px 10px;
+}
+
+#password{
+    width:50%;
+    padding: 5px 10px;
+}
+
+#username{
+   width:50%;
+    padding: 5px 10px;
+}
+
+#nickname{
+   width:50%;
+    padding: 5px 10px;
+}
