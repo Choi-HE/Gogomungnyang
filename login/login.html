@@ -1,47 +1,48 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>로그인</title>
-    <link rel="stylesheet" href="style.css"> </head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="login-container">
-        <h2>로그인</h2>
-        <form id="loginForm">
-            <div class="input-group">
-                <label for="username">아이디</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="input-group">
-                <label for="password">비밀번호</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit">로그인</button>
-            <p></p>
-            <div class="g-recaptcha" data-sitekey="6LcuXjYrAAAAAPTZlfoFwlGHW9XCXt_NfpkRchHT"></div>
-        </form>
-        <div class="links">
-            <a href="/아이디/비번찾기/find_id.html">아이디/비밀번호 찾기</a>
-            <!-- <a href="#">회원가입</a> -->
-            <a href="/회원가입/뼈_.html">회원가입</a>
+      <h2>로그인</h2>
+      <form id="loginForm">
+        <div class="input-group">
+          <label for="username">아이디</label>
+          <input type="text" id="username" name="username" onkeyup="idKeyEvent()" required />
         </div>
+        <div class="input-group">
+          <label for="password">비밀번호</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button type="submit">로그인</button>
+        <p></p>
+        <div class="g-recaptcha" data-sitekey="6LcuXjYrAAAAAPTZlfoFwlGHW9XCXt_NfpkRchHT"></div>
+      </form>
+      <div class="links">
+        <a href="/아이디/비번찾기/find_id.html">아이디/비밀번호 찾기</a>
+        <!-- <a href="#">회원가입</a> -->
+        <a href="/회원가입/뼈_.html">회원가입</a>
+      </div>
     </div>
     <script>
-        // (선택 사항) 프론트엔드에서 reCAPTCHA 확인
-        const loginForm = document.getElementById('loginForm');
-        if (loginForm) {
-            loginForm.addEventListener('submit', function(event) {
-                const recaptchaResponse = grecaptcha.getResponse();
-                if (recaptchaResponse.length === 0) {
-                    alert('로봇이 아님을 인증해주세요.');
-                    event.preventDefault(); // 폼 제출 막기
-                    return false;
-                }
-            });
-        }
+      // (선택 사항) 프론트엔드에서 reCAPTCHA 확인
+      const loginForm = document.getElementById("loginForm");
+      if (loginForm) {
+        loginForm.addEventListener("submit", function (event) {
+          const recaptchaResponse = grecaptcha.getResponse();
+          if (recaptchaResponse.length === 0) {
+            alert("로봇이 아님을 인증해주세요.");
+            event.preventDefault(); // 폼 제출 막기
+            return false;
+          }
+        });
+      }
     </script>
     <script src="script.js"></script>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
- </body>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </body>
 </html>

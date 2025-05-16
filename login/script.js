@@ -46,3 +46,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+// 로그인 아이디 입력할때 15자 초과일시 경고창 띄우고 입력값 15자로 반환
+function idKeyEvent() {
+  usernameInput = document.getElementById("username");
+  if (usernameInput.value.length > 15) {
+    alert("아이디는 4자 이상 15자 이하로 입력해주세요.");
+    usernameInput.value = usernameInput.value.slice(0, 15);
+    return;
+  }
+}
